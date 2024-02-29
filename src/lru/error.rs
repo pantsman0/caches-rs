@@ -1,7 +1,7 @@
-use core::fmt::{Display, Formatter};
+use core::fmt::{Display, Error, Formatter};
 
 /// `CacheError` is the errors of this crate.
-#[derive(Copy, Clone, Debug, PartialEq, PartialOrd)]
+#[derive(Copy, Clone, Debug, Error, PartialEq, PartialOrd)]
 pub enum CacheError {
     /// Invalid cache size
     InvalidSize(usize),
