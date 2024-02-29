@@ -1,7 +1,7 @@
-use core::fmt::{Display, Error, Formatter};
+use core::fmt::{Display, Formatter};
 
-/// `CacheError` is the errors of this crate.
-#[derive(Copy, Clone, Debug, Error, PartialEq, PartialOrd)]
+// `CacheError` is the errors of this crate.
+#[derive(Copy, Clone, Debug, PartialEq, PartialOrd)]
 pub enum CacheError {
     /// Invalid cache size
     InvalidSize(usize),
@@ -24,3 +24,7 @@ impl Display for CacheError {
         }
     }
 }
+
+
+#[cfg(feature = "std")]
+impl std::error::Error for CacheError {}
